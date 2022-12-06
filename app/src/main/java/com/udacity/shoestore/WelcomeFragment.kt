@@ -20,8 +20,6 @@ class WelcomeFragment : Fragment() {
         binding = FragmentWelcomeBinding.inflate(inflater)
 
         binding.button.setOnClickListener {
-            findNavController().navigate(
-                WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment())
         }
 
         return binding.root

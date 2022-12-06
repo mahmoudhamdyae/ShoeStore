@@ -1,6 +1,7 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.shoeList
 
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.models.Shoe
 
 class ShoeListFragment: Fragment() {
 
@@ -31,7 +34,10 @@ class ShoeListFragment: Fragment() {
         }
 
         // Get Shoes from Previous Screen
-        val shoe = ShoeListFragmentArgs.fromBundle(requireArguments()).shoe
+        var shoe : Shoe? = null
+        try {
+            shoe = ShoeListFragmentArgs.fromBundle(requireArguments()).shoe
+        } catch (_: Exception) {}
         if (shoe != null)
             viewModel.addShoe(shoe)
 
@@ -43,6 +49,17 @@ class ShoeListFragment: Fragment() {
             childView.findViewById<TextView>(R.id.shoe_description).text = shoe?.description
             childView.findViewById<TextView>(R.id.shoe_company).text = shoe?.company
             parentLayout.addView(childView)
+        }
+
+        val appPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        val editor = appPreferences.edit()
+        val isFirstTime = appPreferences.getBoolean("isFirstTime", true)
+
+        if (isFirstTime) {
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLogInFragment())
+            // Implement your first time logic
+            editor.putBoolean("isFirstTime", false)
+            editor.apply()
         }
 
         return binding.root
