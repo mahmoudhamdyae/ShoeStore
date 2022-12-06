@@ -29,4 +29,13 @@
     <string name="shoe_description_label">Description: </string>
     <string name="shoe_images_label">Images: </string>
 
+    <!-- Detail Fragment -->
+    <string name="shoe_name_hint">Name</string>
+    <string name="shoe_size_hint">Size</string>
+    <string name="shoe_company_hint">Company</string>
+    <string name="shoe_description_hint">Description</string>
+    <string name="shoe_images_hint">Images</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="save_button">Save</string>
+
 </resources>
