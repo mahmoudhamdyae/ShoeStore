@@ -21,12 +21,14 @@ class LogInFragment : Fragment() {
 
         // Log In
         binding.logInButton.setOnClickListener {
-            findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToMainFragment())
+            findNavController().navigate(
+                LogInFragmentDirections.actionLogInFragmentToMainFragment())
         }
 
         // Sign Up
         binding.signUpButton.setOnClickListener {
-            findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToMainFragment())
+            findNavController().navigate(
+                LogInFragmentDirections.actionLogInFragmentToMainFragment())
         }
 
         return binding.root

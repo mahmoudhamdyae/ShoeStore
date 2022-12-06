@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">ShoeStore</string>
 
-    <!-- Welcome Fragment -->
-    <string name="text_view1">Text View 1</string>/
-    <string name="text_view2">Text View 2</string>
-
     <!-- Log In Fragment -->
     <string name="email_text_view">E-mail</string>
     <string name="email_edit_text_hint">E-mail</string>
@@ -12,5 +8,15 @@
     <string name="password_edit_text_hint">Password</string>
     <string name="log_in_button">Log In</string>
     <string name="sign_up_button">Sign Up</string>
+
+    <!-- Welcome Fragment -->
+    <string name="welcome_text_view1">Welcome Text View 1</string>
+    <string name="welcome_text_view2">Welcome Text View 2</string>
+    <string name="welcome_button">To Instructions</string>
+
+    <!-- Instruction Fragment -->
+    <string name="instruction_text_view1">Instruction Text View 1</string>
+    <string name="instruction_text_view2">Instruction Text View 2</string>
+    <string name="instruction_button">To Shoes List</string>
 
 </resources>
