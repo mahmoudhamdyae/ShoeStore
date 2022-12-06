@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import com.udacity.shoestore.databinding.FragmentLogInBinding
 
 class LogInFragment : Fragment() {
@@ -22,18 +22,30 @@ class LogInFragment : Fragment() {
 
         // Log In
         binding.logInButton.setOnClickListener {
-            Toast.makeText(context, "log", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(
-                LogInFragmentDirections.actionLogInFragmentToShoeListFragment(null))
+            saveStateAndNavigate()
         }
 
         // Sign Up
         binding.signUpButton.setOnClickListener {
-            Toast.makeText(context, "sign", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(
-                LogInFragmentDirections.actionLogInFragmentToShoeListFragment(null))
+            saveStateAndNavigate()
         }
 
         return binding.root
+    }
+
+    private fun saveStateAndNavigate() {
+        // Save State
+        val appPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = appPreferences.edit()
+        val isFirstTime = appPreferences.getBoolean("isFirstTime", true)
+        if (isFirstTime) {
+            // Implement your first time logic
+            editor.putBoolean("isFirstTime", false)
+            editor.apply()
+        }
+
+        // Navigate To Shoe List Fragment
+        findNavController().navigate(
+            LogInFragmentDirections.actionLogInFragmentToShoeListFragment(null))
     }
 }

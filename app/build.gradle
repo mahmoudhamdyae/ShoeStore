@@ -51,7 +51,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     // Navigation
-    // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Shared Preference
+    implementation 'androidx.preference:preference-ktx:1.2.0'
 }
