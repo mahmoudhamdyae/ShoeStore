@@ -11,7 +11,7 @@ class ShoeListViewModel: ViewModel() {
     val shoes : LiveData<List<Shoe>>
         get() = _shoes
 
-    init {
-        _shoes.value = listOf(Shoe("name" , .9, "company", "description", listOf()))
+    fun addShoe(shoe: Shoe) {
+        _shoes.value = listOf(shoe)
     }
 }

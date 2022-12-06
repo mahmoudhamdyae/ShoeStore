@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -29,8 +30,12 @@ class ShoeListFragment: Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToDetailFragment())
         }
 
-        viewModel.shoes.observe(viewLifecycleOwner, Observer {
-        })
+        val shoe = ShoeListFragmentArgs.fromBundle(requireArguments()).shoe
+        viewModel.addShoe(shoe)
+
+        viewModel.shoes.observe(viewLifecycleOwner) {
+            Toast.makeText(context, it.first().name, Toast.LENGTH_SHORT).show()
+        }
 
         return binding.root
     }
