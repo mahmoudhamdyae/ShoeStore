@@ -6,21 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.udacity.shoestore.databinding.FragmentMainBinding
+import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
-class MainFragment : Fragment() {
+class WelcomeFragment : Fragment() {
 
-    private lateinit var binding : FragmentMainBinding
+    private lateinit var binding : FragmentWelcomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentMainBinding.inflate(inflater)
+        binding = FragmentWelcomeBinding.inflate(inflater)
 
         binding.button.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToLogInFragment())
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLogInFragment())
         }
 
         return binding.root
