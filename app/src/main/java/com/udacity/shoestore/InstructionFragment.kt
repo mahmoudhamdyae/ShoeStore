@@ -21,9 +21,8 @@ class InstructionFragment: Fragment() {
         binding = FragmentInstructionBinding.inflate(inflater)
 
         binding.button.setOnClickListener {
-            val shoe = Shoe("name" , .9, "company", "description", listOf())
             findNavController().navigate(
-                InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment(shoe))
+                InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment(null))
         }
 
         return binding.root

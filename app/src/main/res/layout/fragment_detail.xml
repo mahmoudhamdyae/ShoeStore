@@ -13,6 +13,7 @@
             android:text="@string/shoe_name_label" />
 
         <EditText
+            android:id="@+id/name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"
@@ -25,11 +26,12 @@
             android:text="@string/shoe_size_label" />
 
         <EditText
+            android:id="@+id/size_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"
             android:hint="@string/shoe_size_hint"
-            android:inputType="text" />
+            android:inputType="number" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,6 +39,7 @@
             android:text="@string/shoe_company_label" />
 
         <EditText
+            android:id="@+id/company_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"
@@ -49,6 +52,7 @@
             android:text="@string/shoe_description_label" />
 
         <EditText
+            android:id="@+id/description_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"

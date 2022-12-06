@@ -25,13 +25,25 @@ class DetailFragment: Fragment() {
             findNavController().navigateUp()
         }
 
-        val shoe = Shoe("name" , .9, "company", "description", listOf())
-
         // Save Button
         binding.saveButton.setOnClickListener {
+            val shoe = getShoeDetail()
             findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment(shoe))
         }
 
         return binding.root
+    }
+
+    private fun getShoeDetail() : Shoe {
+        val name = binding.nameEditText.text.toString()
+        val size = try {
+            binding.sizeEditText.text.toString().toDouble()
+        } catch (_: Exception) {
+            .0
+        }
+        val company = binding.companyEditText.text.toString()
+        val description = binding.descriptionEditText.text.toString()
+
+        return Shoe(name, size, company, description, listOf())
     }
 }
