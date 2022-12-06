@@ -19,4 +19,14 @@
     <string name="instruction_text_view2">Instruction Text View 2</string>
     <string name="instruction_button">To Shoes List</string>
 
+    <!-- Shoe List -->
+    <string name="fab_content_description">Add Shoe</string>
+
+    <!-- Shoe Item -->
+    <string name="shoe_name_label">Name: </string>
+    <string name="shoe_size_label">Size: </string>
+    <string name="shoe_company_label">Company: </string>
+    <string name="shoe_description_label">Description: </string>
+    <string name="shoe_images_label">Images: </string>
+
 </resources>
