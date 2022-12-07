@@ -23,10 +23,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.shoes}" />
+                    android:text="@{viewModel.shoes}" />-->
             </LinearLayout>
 
         </ScrollView>

@@ -2,6 +2,7 @@ package com.udacity.shoestore.shoeList
 
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -43,12 +44,10 @@ class ShoeListFragment: Fragment() {
         // Observe Shoes
         viewModel.shoes.observe(viewLifecycleOwner) {
             val parentLayout = binding.linearLayout
-            val childView = layoutInflater.inflate(R.layout.shoe_item, parentLayout, false)
-            childView.findViewById<TextView>(R.id.shoe_name).text = shoe?.name
-            childView.findViewById<TextView>(R.id.shoe_size).text = shoe?.size.toString()
-            childView.findViewById<TextView>(R.id.shoe_description).text = shoe?.description
-            childView.findViewById<TextView>(R.id.shoe_company).text = shoe?.company
-            parentLayout.addView(childView)
+            val childView1 = createChildView(parentLayout, shoe)
+            val childView2 = createChildView(parentLayout, shoe)
+            parentLayout.addView(childView1)
+            parentLayout.addView(childView2)
         }
 
         // Log In
@@ -63,6 +62,15 @@ class ShoeListFragment: Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    private fun createChildView(parentLayout: LinearLayout, shoe: Shoe?) : View {
+        val childView: View = layoutInflater.inflate(R.layout.shoe_item, parentLayout, false)
+        childView.findViewById<TextView>(R.id.shoe_name).text = shoe?.name
+        childView.findViewById<TextView>(R.id.shoe_size).text = shoe?.size.toString()
+        childView.findViewById<TextView>(R.id.shoe_description).text = shoe?.description
+        childView.findViewById<TextView>(R.id.shoe_company).text = shoe?.company
+        return layoutInflater.inflate(R.layout.shoe_item, parentLayout, false)
     }
 
     // Sign Out
