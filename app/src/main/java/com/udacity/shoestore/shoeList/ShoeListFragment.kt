@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.models.Shoe
 
 @Suppress("DEPRECATION")
@@ -58,10 +59,9 @@ class ShoeListFragment: Fragment() {
 
     private fun createChildView(parentLayout: LinearLayout, shoe: Shoe?) : View {
         val childView = layoutInflater.inflate(R.layout.shoe_item, parentLayout, false)
-        childView.findViewById<TextView>(R.id.shoe_name).text = shoe?.name
-        childView.findViewById<TextView>(R.id.shoe_size).text = shoe?.size.toString()
-        childView.findViewById<TextView>(R.id.shoe_description).text = shoe?.description
-        childView.findViewById<TextView>(R.id.shoe_company).text = shoe?.company
+        val bindingItem: ShoeItemBinding = ShoeItemBinding.bind(childView)
+        bindingItem.shoe = shoe
+
         return childView
     }
 
