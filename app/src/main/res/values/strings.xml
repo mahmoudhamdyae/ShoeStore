@@ -10,9 +10,9 @@
     <string name="sign_up_button">Sign Up</string>
 
     <!-- Welcome Fragment -->
-    <string name="welcome_text_view1">Welcome Text View 1</string>
-    <string name="welcome_text_view2">Welcome Text View 2</string>
-    <string name="welcome_button">To Log In</string>
+    <string name="welcome_text_view1">Welcome to Shoe Store App</string>
+    <string name="welcome_text_view2">Hope You Love it</string>
+    <string name="welcome_button">Log In</string>
 
     <!-- Instruction Fragment -->
     <string name="instruction_text_view1">Instruction Text View 1</string>

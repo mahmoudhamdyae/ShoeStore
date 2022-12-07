@@ -29,6 +29,7 @@
 
                 <TextView
                     android:id="@+id/name_label"
+                    style="@style/Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/shoe_name_label"
@@ -46,6 +47,7 @@
 
                 <TextView
                     android:id="@+id/size_label"
+                    style="@style/Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/shoe_size_label"
@@ -63,6 +65,7 @@
 
                 <TextView
                     android:id="@+id/company_label"
+                    style="@style/Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/shoe_company_label"
@@ -80,6 +83,7 @@
 
                 <TextView
                     android:id="@+id/description_label"
+                    style="@style/Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/shoe_description_label"

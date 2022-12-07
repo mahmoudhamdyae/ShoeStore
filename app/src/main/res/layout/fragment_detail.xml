@@ -1,54 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/main_padding">
 
         <TextView
+            android:id="@+id/name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/Text"
             android:text="@string/shoe_name_label" />
 
         <EditText
             android:id="@+id/name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/name_label"
+            style="@style/Text"
             android:autofillHints="name"
             android:hint="@string/shoe_name_hint"
             android:inputType="text" />
 
         <TextView
+            android:id="@+id/size_label"
             android:layout_width="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/name_edit_text"
             android:layout_height="wrap_content"
+            style="@style/Text"
+            app:layout_constraintStart_toStartOf="parent"
             android:text="@string/shoe_size_label" />
 
         <EditText
             android:id="@+id/size_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Text"
+            app:layout_constraintTop_toBottomOf="@+id/size_label"
             android:autofillHints="name"
             android:hint="@string/shoe_size_hint"
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/company_label"
             android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/size_edit_text"
+            style="@style/Text"
             android:text="@string/shoe_company_label" />
 
         <EditText
             android:id="@+id/company_edit_text"
             android:layout_width="match_parent"
+            style="@style/Text"
             android:layout_height="wrap_content"
             android:autofillHints="name"
+            app:layout_constraintTop_toBottomOf="@id/company_label"
             android:hint="@string/shoe_company_hint"
             android:inputType="text" />
 
         <TextView
+            android:id="@+id/description_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/Text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/company_edit_text"
             android:text="@string/shoe_description_label" />
 
         <EditText
@@ -56,19 +79,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="name"
+            style="@style/Text"
+            app:layout_constraintTop_toBottomOf="@+id/description_label"
             android:hint="@string/shoe_description_hint"
             android:inputType="text" />
-
-        <Button
-            android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cancel_button" />
 
         <Button
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/description_edit_text"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/Text"
             android:text="@string/save_button" />
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            style="@style/Text"
+            app:layout_constraintTop_toBottomOf="@id/description_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
