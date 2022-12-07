@@ -1,9 +1,7 @@
 package com.udacity.shoestore.shoeList
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,6 +11,7 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.models.Shoe
 
+@Suppress("DEPRECATION")
 class ShoeListFragment: Fragment() {
 
     private lateinit var binding: FragmentShoeListBinding
@@ -23,8 +22,8 @@ class ShoeListFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentShoeListBinding.inflate(inflater)
 
+        binding = FragmentShoeListBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
@@ -41,6 +40,7 @@ class ShoeListFragment: Fragment() {
         if (shoe != null)
             viewModel.addShoe(shoe)
 
+        // Observe Shoes
         viewModel.shoes.observe(viewLifecycleOwner) {
             val parentLayout = binding.linearLayout
             val childView = layoutInflater.inflate(R.layout.shoe_item, parentLayout, false)
@@ -59,6 +59,36 @@ class ShoeListFragment: Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToWelcomeFragment())
         }
 
+        // This allows onCreateOptionsMenu to be called
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+
+    // Sign Out
+
+    @Deprecated("Deprecated in Java")
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_main, menu)
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.sign_out_menu -> signOut()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun signOut() {
+        // Change The Variable To False For Next Registration
+        val appPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = appPreferences.edit()
+        editor.putBoolean("isFirstTime", true)
+        editor.apply()
+
+        // Navigate To Log In
+        findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLogInFragment())
     }
 }

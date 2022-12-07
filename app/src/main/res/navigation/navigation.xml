@@ -54,6 +54,11 @@
             android:name="shoe"
             app:argType="com.udacity.shoestore.models.Shoe"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
