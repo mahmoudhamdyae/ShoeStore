@@ -3,7 +3,7 @@ package com.udacity.shoestore.shoeList
 import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -25,7 +25,7 @@ class ShoeListFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentShoeListBinding.inflate(inflater)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
