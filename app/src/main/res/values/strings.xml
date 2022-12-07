@@ -12,12 +12,13 @@
     <!-- Welcome Fragment -->
     <string name="welcome_text_view1">Welcome to Shoe Store App</string>
     <string name="welcome_text_view2">Hope You Love it</string>
-    <string name="welcome_button">Log In</string>
+    <string name="welcome_button_to_log_in">Log In</string>
+    <string name="welcome_button_to_instructions">Instructions</string>
 
     <!-- Instruction Fragment -->
-    <string name="instruction_text_view1">Instruction Text View 1</string>
-    <string name="instruction_text_view2">Instruction Text View 2</string>
-    <string name="instruction_button">To Shoes List</string>
+    <string name="instruction_text_view1">This is a Free App</string>
+    <string name="instruction_text_view2">Shoe Store</string>
+    <string name="instruction_button">Log In</string>
 
     <!-- Shoe List -->
     <string name="fab_content_description">Add Shoe</string>
