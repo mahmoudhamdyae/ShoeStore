@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentDetailBinding
 import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.shoeList.ShoeListViewModel
 
 class DetailFragment: Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
+    private val viewModel: ShoeListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,8 +30,8 @@ class DetailFragment: Fragment() {
 
         // Save Button
         binding.saveButton.setOnClickListener {
-            val shoe = getShoeDetail()
-            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment(shoe))
+            viewModel.addShoe(getShoeDetail())
+            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
         }
 
         return binding.root

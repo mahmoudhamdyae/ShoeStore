@@ -46,6 +46,6 @@ class LogInFragment : Fragment() {
 
         // Navigate To Shoe List Fragment
         findNavController().navigate(
-            LogInFragmentDirections.actionLogInFragmentToShoeListFragment(null))
+            LogInFragmentDirections.actionLogInFragmentToShoeListFragment())
     }
 }
