@@ -21,6 +21,7 @@
     <string name="instruction_button">Log In</string>
 
     <!-- Shoe List -->
+    <string name="empty_text_view">There is no shoes\nTry adding one</string>
     <string name="fab_content_description">Add Shoe</string>
 
     <!-- Shoe Item -->

@@ -37,6 +37,9 @@ class ShoeListFragment: Fragment() {
         // Observe Shoes
         viewModel.shoes.observe(viewLifecycleOwner) {
             val parentLayout = binding.linearLayout
+            if (it.isNotEmpty()) {
+                binding.emptyTextView.visibility = View.GONE
+            }
             for (item in it) {
                 val childView = createChildView(parentLayout, item)
                 parentLayout.addView(childView)
