@@ -38,6 +38,7 @@ class DetailFragment: Fragment() {
         return binding.root
     }
 
+    // Get Details from EditTexts
     private fun getShoeDetail() : Shoe {
         val name = binding.nameEditText.text.toString()
         val size = try {
@@ -48,6 +49,6 @@ class DetailFragment: Fragment() {
         val company = binding.companyEditText.text.toString()
         val description = binding.descriptionEditText.text.toString()
 
-        return Shoe(name, size, company, description, listOf())
+        return Shoe(name, size, company, description)
     }
 }

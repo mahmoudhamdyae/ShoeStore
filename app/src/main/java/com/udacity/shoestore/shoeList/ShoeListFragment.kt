@@ -25,6 +25,7 @@ class ShoeListFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        // Initialize
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

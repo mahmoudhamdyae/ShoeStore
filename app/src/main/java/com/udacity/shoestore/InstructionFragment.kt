@@ -20,7 +20,8 @@ class InstructionFragment: Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
 
-        binding.button.setOnClickListener {
+        // Navigate to Log In Fragment
+        binding.toLogInButton.setOnClickListener {
             findNavController().navigate(InstructionFragmentDirections.actionInstructionFragmentToLogInFragment())
         }
 

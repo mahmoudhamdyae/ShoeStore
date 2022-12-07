@@ -16,6 +16,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Style of Texts in App -->
     <style name="Text" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/colorAccent</item>
     </style>
