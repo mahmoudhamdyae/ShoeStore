@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentDetailBinding
-import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.shoeList.ShoeListViewModel
 
 class DetailFragment: Fragment() {
@@ -22,33 +21,30 @@ class DetailFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        // Initialization
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+        viewModel.name.value = ""
+        viewModel.size.value = ""
+        viewModel.company.value = ""
+        viewModel.description.value = ""
 
         // Cancel Button
         binding.cancelButton.setOnClickListener {
             findNavController().navigateUp()
         }
 
-        // Save Button
-        binding.saveButton.setOnClickListener {
-            viewModel.addShoe(getShoeDetail())
-            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
+        // Navigate to Shoe List Fragment
+        viewModel.navigateToList.observe(viewLifecycleOwner) {
+            if (it) {
+                findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
+                viewModel.clearNavigate()
+            }
         }
 
         return binding.root
-    }
-
-    // Get Details from EditTexts
-    private fun getShoeDetail() : Shoe {
-        val name = binding.nameEditText.text.toString()
-        val size = try {
-            binding.sizeEditText.text.toString().toDouble()
-        } catch (_: Exception) {
-            .0
-        }
-        val company = binding.companyEditText.text.toString()
-        val description = binding.descriptionEditText.text.toString()
-
-        return Shoe(name, size, company, description)
     }
 }

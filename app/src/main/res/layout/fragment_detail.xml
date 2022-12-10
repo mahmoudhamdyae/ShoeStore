@@ -2,9 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.shoeList.ShoeListViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="@dimen/main_padding">
 
@@ -25,6 +31,7 @@
             android:autofillHints="name"
             android:hint="@string/shoe_name_hint"
             android:inputType="text"
+            android:text="@={viewModel.name}"
             app:layout_constraintTop_toBottomOf="@+id/name_label" />
 
         <TextView
@@ -43,7 +50,8 @@
             android:layout_height="wrap_content"
             android:autofillHints="name"
             android:hint="@string/shoe_size_hint"
-            android:inputType="number"
+            android:text="@={viewModel.size}"
+            android:inputType="numberDecimal"
             app:layout_constraintTop_toBottomOf="@+id/size_label" />
 
         <TextView
@@ -63,6 +71,7 @@
             android:autofillHints="name"
             android:hint="@string/shoe_company_hint"
             android:inputType="text"
+            android:text="@={viewModel.company}"
             app:layout_constraintTop_toBottomOf="@id/company_label" />
 
         <TextView
@@ -82,6 +91,7 @@
             android:autofillHints="name"
             android:hint="@string/shoe_description_hint"
             android:inputType="text"
+            android:text="@={viewModel.description}"
             app:layout_constraintTop_toBottomOf="@+id/description_label" />
 
         <Button
@@ -90,6 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save_button"
+            android:onClick="@{() -> viewModel.addShoe()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description_edit_text" />
 
