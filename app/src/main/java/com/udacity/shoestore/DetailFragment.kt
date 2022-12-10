@@ -40,7 +40,7 @@ class DetailFragment: Fragment() {
         // Navigate to Shoe List Fragment
         viewModel.navigateToList.observe(viewLifecycleOwner) {
             if (it) {
-                findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToShoeListFragment())
+                findNavController().navigateUp()
                 viewModel.clearNavigate()
             }
         }
