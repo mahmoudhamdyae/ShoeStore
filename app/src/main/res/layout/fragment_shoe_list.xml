@@ -9,6 +9,7 @@
             type="com.udacity.shoestore.shoeList.ShoeListViewModel" />
     </data>
 
+    <!-- Shoe List Fragment -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <!-- Shoe Items -->
             <LinearLayout
                 android:id="@+id/linear_layout"
                 android:layout_width="match_parent"

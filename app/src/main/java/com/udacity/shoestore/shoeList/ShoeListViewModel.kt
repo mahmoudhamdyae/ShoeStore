@@ -11,10 +11,12 @@ class ShoeListViewModel: ViewModel() {
     val shoes : LiveData<List<Shoe>>
         get() = _shoes
 
+    // A Variable to Navigate to Shoe List Fragment
     private val _navigateToList = MutableLiveData(false)
     val navigateToList : LiveData<Boolean>
         get() = _navigateToList
 
+    // Edit Texts Variables
     val name = MutableLiveData<String>()
     val size = MutableLiveData<String>()
     val description = MutableLiveData<String>()
@@ -22,6 +24,7 @@ class ShoeListViewModel: ViewModel() {
 
     private val list = mutableListOf<Shoe>()
 
+    // On Click the Save Button
     fun addShoe() {
         list.add(Shoe(
             name = name.value,

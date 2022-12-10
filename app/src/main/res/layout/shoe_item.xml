@@ -10,6 +10,7 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
+    <!-- Shoe Item -->
     <LinearLayout
         android:id="@+id/card_view"
         android:layout_width="match_parent"
@@ -21,6 +22,7 @@
             android:layout_margin="@dimen/card_margin"
             app:cardCornerRadius="@dimen/main_padding">
 
+            <!-- Card View -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

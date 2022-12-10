@@ -34,6 +34,7 @@ class LogInFragment : Fragment() {
         return binding.root
     }
 
+    // One Time Log In
     private fun saveStateAndNavigate() {
         // Save State
         val appPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())

@@ -61,6 +61,7 @@ class ShoeListFragment: Fragment() {
         return binding.root
     }
 
+    // Create a Shoe Item
     private fun createChildView(parentLayout: LinearLayout, shoe: Shoe?) : View {
         val childView = layoutInflater.inflate(R.layout.shoe_item, parentLayout, false)
         val bindingItem: ShoeItemBinding = ShoeItemBinding.bind(childView)

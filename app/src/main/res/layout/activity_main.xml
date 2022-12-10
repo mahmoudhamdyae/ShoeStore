@@ -20,6 +20,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Navigation -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/myNavHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
