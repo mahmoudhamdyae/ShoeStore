@@ -28,7 +28,7 @@ class DetailFragment: Fragment() {
         binding.lifecycleOwner = this
 
         viewModel.name.value = ""
-        viewModel.size.value = ""
+        viewModel.size.value = 0.0
         viewModel.company.value = ""
         viewModel.description.value = ""
 

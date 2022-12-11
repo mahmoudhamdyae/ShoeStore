@@ -18,7 +18,7 @@ class ShoeListViewModel: ViewModel() {
 
     // Edit Texts Variables
     val name = MutableLiveData<String>()
-    val size = MutableLiveData<String>()
+    val size = MutableLiveData<Double>()
     val description = MutableLiveData<String>()
     val company = MutableLiveData<String>()
 
@@ -28,7 +28,7 @@ class ShoeListViewModel: ViewModel() {
     fun addShoe() {
         list.add(Shoe(
             name = name.value,
-            size = try { size.value?.toDouble() } catch (_: Exception) { 0.0 },
+            size = size.value,
             description = description.value,
             company = company.value
         ))

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="com.udacity.shoestore.utils.Converters" />
         <variable
             name="viewModel"
             type="com.udacity.shoestore.shoeList.ShoeListViewModel" />
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:autofillHints="name"
             android:hint="@string/shoe_size_hint"
-            android:text="@={viewModel.size}"
+            android:text="@={Converters.doubleToString(viewModel.size)}"
             android:inputType="numberDecimal"
             app:layout_constraintTop_toBottomOf="@+id/size_label" />
 
